@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    h1 {
+      color: greenyellow;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Exploring Event Bubble</h1>
+  <section id="list-container">
+    <ul id="list-ul">
+      <li class="item-1">red apple id good</li>
+      <li id="item-2"> green leaf is healthy food</li>
+      <li class="item-3"> yellow is warning sign</li>
+      <li class="item-4">violet is like a silent </li>
+      <li class="item-5">orange is source of vitamine C</li>
+    </ul>
+
+  </section>
+
+  <script>
+
+    document.getElementById('item-2').addEventListener('click', function () {
+      console.log('item clicked');
+      event.stoImmediatePropagation();
+    })
+
+    document.getElementById('list-ul').addEventListener('click', function () {
+      console.log('ul clicked');
+    })
+    document.getElementById('list-container').addEventListener('click', function () {
+      console.log('section clicked');
+    })
+    document.getElementById('list-ul').addEventListener('click', function () {
+      console.log('ul clicked');
+    })
+    document.getElementById('list-container').addEventListener('click', function () {
+      console.log('section clicked');
+    })
+  </script>
+</body>
+
+</html>

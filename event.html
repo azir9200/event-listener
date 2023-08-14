@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DOM event</title>
+  <style>
+    * {
+      margin: 10px;
+      padding: 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Final Dom Event</h1>
+  <h3 id="handle-status">Default Text</h3>
+  <p id="para-one">I am very excited today that My wife and my son are coming to me soon.</p>
+  <input id="input-field" type="text">
+  <button id="btn-update">Update</button>
+  <br>
+  <br>
+  <button onclick="handleOnClick()">My first onclick function </button>
+  <button id="event-list">my first Event-Listener button</button>
+
+  <script>
+
+    function handleOnClick() {
+      const handleStatus = document.getElementById('handle-status');
+      handleStatus.innerText = 'KI KORTE HOBE AMAKE BOLO';
+    }
+
+    document.getElementById('btn-update').addEventListener('click', function () {
+      // console.log('i click on botam')
+      const inputField = document.getElementById('input-field');
+      const inputText = inputField.value;
+
+      const p = document.getElementById('para-one');
+      p.innerText = inputText;
+      inputField.value = '';
+    })
+  </script>
+
+</body>
+
+</html>
